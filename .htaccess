@@ -1,0 +1,107 @@
+<ifModule mod_deflate.c>
+  <filesMatch ".(css|js|html|php)$">
+    SetOutputFilter DEFLATE
+  </filesMatch>
+</ifModule>
+<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|js|pdf)$">
+  Header set Cache-Control "max-age=2592000"
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+#ErrorDocument 404 http://localhost/procurement/not-found
+RewriteRule ^auth$ procurement.php?session=auth [L]
+RewriteRule ^profile$ procurement.php?session=profile [L]
+RewriteRule ^signout$ procurement.php?session=signout [L]
+RewriteRule ^dashboard$ procurement.php?halaman=dashboard [L]
+
+RewriteRule ^bonus$ procurement.php?halaman=bonus [L]
+RewriteRule ^bonus/([^/\.]+)/?$ procurement.php?halaman=bonus&hal=$1 [L]
+RewriteRule ^bonus/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=bonushal=$1&bonus=$2 [L]
+
+RewriteRule ^order$ procurement.php?halaman=order [L]
+RewriteRule ^order/([^/\.]+)/?$ procurement.php?halaman=order&hal=$1 [L]
+RewriteRule ^order/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=order&hal=$1&order=$2 [L]
+
+RewriteRule ^sanksi$ procurement.php?halaman=sanksi [L]
+RewriteRule ^sanksi/([^/\.]+)/?$ procurement.php?halaman=sanksi&hal=$1 [L]
+RewriteRule ^sanksi/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=sanksi&hal=$1&sanksi=$2 [L]
+
+RewriteRule ^produk$ procurement.php?halaman=produk [L]
+RewriteRule ^produk/([^/\.]+)/?$ procurement.php?halaman=produk&hal=$1 [L]
+RewriteRule ^produk/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=produk&hal=$1&produk=$2 [L]
+
+RewriteRule ^jenis-produk$ procurement.php?halaman=jenis-produk [L]
+RewriteRule ^jenis-produk/([^/\.]+)/?$ procurement.php?halaman=jenis-produk&hal=$1 [L]
+RewriteRule ^jenis-produk/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=jenis-produk&hal=$1&produk=$2 [L]
+
+RewriteRule ^kategori-produk$ procurement.php?halaman=kategori-produk [L]
+RewriteRule ^kategori-produk/([^/\.]+)/?$ procurement.php?halaman=kategori-produk&hal=$1 [L]
+RewriteRule ^kategori-produk/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=kategori-produk&hal=$1&produk=$2 [L]
+
+RewriteRule ^expenses$ procurement.php?halaman=expenses [L]
+RewriteRule ^expenses/([^/\.]+)/?$ procurement.php?halaman=expenses&hal=$1 [L]
+RewriteRule ^expenses/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=expenses&hal=$1&expenses=$2 [L]
+
+RewriteRule ^customer$ procurement.php?halaman=customer [L]
+RewriteRule ^customer/([^/\.]+)/?$ procurement.php?halaman=customer&hal=$1 [L]
+RewriteRule ^customer/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=customer&hal=$1&customer=$2 [L]
+
+RewriteRule ^report$ procurement.php?halaman=report [L]
+RewriteRule ^report/([^/\.]+)/?$ procurement.php?halaman=report&hal=$1 [L]
+RewriteRule ^report/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=report&hal=$1&report=$2 [L]
+
+RewriteRule ^analyzer$ procurement.php?halaman=analyzer [L]
+RewriteRule ^analyzer/([^/\.]+)/?$ procurement.php?halaman=analyzer&hal=$1 [L]
+RewriteRule ^analyzer/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=analyzer&hal=$1&analyzer=$2 [L]
+
+RewriteRule ^addons$ procurement.php?halaman=addons [L]
+RewriteRule ^addons/([^/\.]+)/?$ procurement.php?halaman=addons&hal=$1 [L]
+RewriteRule ^addons/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=addons&hal=$1&addons=$2 [L]
+
+RewriteRule ^ads$ procurement.php?halaman=ads [L]
+RewriteRule ^ads/([^/\.]+)/?$ procurement.php?halaman=ads&hal=$1 [L]
+RewriteRule ^ads/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=ads&hal=$1&ads=$2 [L]
+
+RewriteRule ^penggajian$ procurement.php?halaman=penggajian [L]
+RewriteRule ^penggajian/([^/\.]+)/?$ procurement.php?halaman=penggajian&hal=$1 [L]
+RewriteRule ^penggajian/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=penggajian&hal=$1&penggajian=$2 [L]
+
+RewriteRule ^user$ procurement.php?halaman=user [L]
+RewriteRule ^user/([^/\.]+)/?$ procurement.php?halaman=user&hal=$1 [L]
+RewriteRule ^user/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=user&hal=$1&user=$2 [L]
+
+RewriteRule ^toko$ procurement.php?halaman=toko [L]
+RewriteRule ^toko/([^/\.]+)/?$ procurement.php?halaman=toko&hal=$1 [L]
+RewriteRule ^toko/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=toko&hal=$1&toko=$2 [L]
+
+RewriteRule ^supplier$ procurement.php?halaman=supplier [L]
+RewriteRule ^supplier/([^/\.]+)/?$ procurement.php?halaman=supplier&hal=$1 [L]
+RewriteRule ^supplier/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=supplier&hal=$1&supplier=$2 [L]
+
+RewriteRule ^bank$ procurement.php?halaman=bank [L]
+RewriteRule ^bank/([^/\.]+)/?$ procurement.php?halaman=bank&hal=$1 [L]
+RewriteRule ^bank/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=bank&hal=$1&bank=$2 [L]
+
+RewriteRule ^reward$ procurement.php?halaman=reward [L]
+RewriteRule ^reward/([^/\.]+)/?$ procurement.php?halaman=reward&hal=$1 [L]
+RewriteRule ^reward/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=reward&hal=$1&reward=$2 [L]
+
+RewriteRule ^punishment$ procurement.php?halaman=punishment [L]
+RewriteRule ^punishment/([^/\.]+)/?$ procurement.php?halaman=punishment&hal=$1 [L]
+RewriteRule ^punishment/([^/\.]+)/([^/\.]+)/?$ procurement.php?halaman=punishment&hal=$1&punishment=$2 [L]
+
+RewriteRule ^not-found$ procurement.php?halaman=not-found [L]
+
+</IfModule>
+# secure htaccess file
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+
+#prevent from browse file.
+Options All -Indexes
+#####################
